@@ -1,0 +1,50 @@
+.container {
+    accent-color: var(--color-accent);
+    box-shadow: 10px 5px 50px -10px var(--color-accent);
+    box-sizing: border-box;
+
+    width: 100%;
+    min-width: 300px;
+    padding: 8px 16px;
+    margin: 8px;
+
+    border: 1px solid gray;
+    border-radius: var(--border-radius);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+        box-sizing: border-box;
+
+        width: 20%;
+        margin: 0 10px;
+        padding: 0;
+
+        font-size: 20px;
+    }
+
+    .title_through {
+        text-decoration: line-through;
+    }
+
+    .description {
+        box-sizing: border-box;
+
+        width: 70%;
+        margin: 0 10px;
+        padding: 0;
+
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .completed {
+        box-sizing: border-box;
+
+        width: 10%;
+        height: 20px;
+    }
+}
