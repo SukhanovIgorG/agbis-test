@@ -17,6 +17,21 @@ class TaskStore {
             completed: false
         });
     }
+    
+    editTask = (id: number, title: string, description: string) => {
+        this.tasks.map((item) => {
+            if (item.id === id) {
+                item.description = description;
+                item.title = title;
+            }
+            return item;
+        });
+    }
+
+    deleteTask = (id: number) => {
+        const index = this.tasks.findIndex((item) => item.id === id);
+        this.tasks.splice(index, 1);
+    }
 
     toggleComplete = (id: number) => {
         this.tasks.map((item) => {

@@ -8,7 +8,7 @@ export const defaultTasks = [
     {
         id: 2,
         title: 'Задача 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid. Lorem ipsum dolor sit amet, consectetur',
         completed: true
     },
     {

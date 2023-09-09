@@ -1,19 +1,29 @@
 import { observer } from "mobx-react-lite"
 
+import { useState } from "react";
 import taskStore from "../../stores/taskStore/taskStore"
-import { TaskItem } from "../TaskItem"
+import { TaskItem } from "../";
 
 import "./TaskList.css"
 
 export const TaskList = observer(() => {
     const { tasks } = taskStore
-    const arr = Array.from(tasks)
+    const [filter, setFilter] = useState(false)
+    const tasksCopy = [...tasks]
+    const taskToShow =  filter ? [...tasksCopy.filter((el) => !el.completed)] : tasks
 
-    console.log('arr :>> ', arr);
+    console.log('tasks :>> ', tasks);
 
     return (
-        <div className="wrapper">
-            {tasks.map((task) => (<TaskItem {...task} key={task.id + Math.random()} />))}
-        </div>
+        <>
+            <button
+            onClick={()=> setFilter(prev => !prev)}>
+                Показать { !filter ? 'только невыполненные'  : 'все'}
+            </button>
+            {taskToShow.length ?
+                taskToShow.map((task) => (<TaskItem {...task} key={task.id + Math.random()} />))
+            :
+            <p>Вы молодец! В списке нет задач 💪</p>}
+        </>
     )
 });

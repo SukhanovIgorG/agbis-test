@@ -1,6 +1,6 @@
 import { Route, Routes, HashRouter } from "react-router-dom"
+import { TaskPage } from "./pages"
 import './App.css'
-import { TaskPages } from "./pages/TaskPages/TaskPages"
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
     <>
       <HashRouter>
         <Routes>
-          <Route path="/" element={<TaskPages />} />
+          <Route path="/" element={<TaskPage />} />
         </Routes>
       </HashRouter>
     </>

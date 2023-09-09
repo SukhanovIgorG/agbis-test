@@ -1,12 +1,14 @@
 .container {
     accent-color: var(--color-accent);
+    background-color: var(--bg-color);
     box-shadow: 10px 5px 50px -10px var(--color-accent);
     box-sizing: border-box;
 
-    width: 100%;
+    max-width: 100%;
+    width: 80vw;
     min-width: 300px;
     padding: 8px 16px;
-    margin: 8px;
+    margin: 8px 0;
 
     border: 1px solid gray;
     border-radius: var(--border-radius);
@@ -24,6 +26,7 @@
         padding: 0;
 
         font-size: 20px;
+        text-align: left;
     }
 
     .title_through {
