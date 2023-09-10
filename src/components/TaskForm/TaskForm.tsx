@@ -11,11 +11,11 @@ interface TaskFormProps {
 
 export const TaskForm = (props: TaskFormProps) => {
     const { task, onSave } = props;
-
     const { addTask, editTask, deleteTask } = taskStore;
-
     const [title, setTitle] = useState<string>(task ? task.title : "");
     const [description, setDescription] = useState<string>(task ? task.description : "");
+
+    const contWordsPerLine = 40
 
     function submitHandler(e: React.FormEvent) {
         e.preventDefault();
@@ -52,7 +52,7 @@ export const TaskForm = (props: TaskFormProps) => {
                         value={description}
                         onChange={e => setDescription(e.target.value)}
                         placeholder='Добавьте описание ... (необязательно)'
-                        rows={3}
+                        rows={description.length / contWordsPerLine} 
                         maxLength={250}
                         className="textarea"
                     />

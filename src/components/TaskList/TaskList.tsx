@@ -16,7 +16,7 @@ export const TaskList = observer(() => {
 
     return (
         <>
-            <button
+            <button className="button"
             onClick={()=> setFilter(prev => !prev)}>
                 Показать { !filter ? 'только невыполненные'  : 'все'}
             </button>

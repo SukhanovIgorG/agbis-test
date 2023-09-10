@@ -20,24 +20,27 @@ export const TaskItem = (props: Task) => {
             {
                 edit ?
                     <TaskForm task={props} onSave={() => setEdit(false)} /> :
-                    <div className='container' >
-                        <h3
-                            className={`${completed ? 'title_through ' : ""}title`}
-                            onClick={() => setEdit(true)}
+                    <div className='card' >
+                        <div className='container' >
+                            <h3
+                                className={`${completed ? 'title_through ' : ""}title`}
+                                onClick={() => setEdit(true)}
                             >
                                 {title}
                             </h3>
-                        <span
-                            className='description'
-                            onClick={() => setEdit(true)}
-                        >{description}</span>
-                        <input
-                            className='completed'
-                            type="checkbox"
-                            name="completed"
-                            id="completed"
-                            onChange={handleChange}
-                            checked={completed} />
+                            <span
+                                className='description'
+                                onClick={() => setEdit(true)}
+                            >{description}</span>
+                        </div>
+                            <input
+                                className='completed'
+                                type="checkbox"
+                                name="completed"
+                                id="completed"
+                                onChange={handleChange}
+                                checked={completed}
+                            />
                     </div>
             }
         </>
