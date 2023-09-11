@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { TaskList, TaskForm, Wrapper } from "../../components";
 import { useTranslation } from "react-i18next";
+import { defaultFunction } from "./constants";
 import i18n from "../../utils/i18next";
 
 import './TaskPage.css'
@@ -10,6 +11,7 @@ export const TaskPage = () => {
     const { t } = useTranslation();
 
     useEffect(() => {
+        // тк языка только 2 использована обычная кнопака вместо селекта
         const currentLang = i18n.resolvedLanguage
         if (currentLang === 'ru') {
             setLang('en')
@@ -29,10 +31,14 @@ export const TaskPage = () => {
 
     return (
         <div className="task_page">
-            <button className="lang_button" onClick={()=> {setLanguage(lang)}}>{lang}</button>
+            <button
+                className="lang_button"
+                onClick={()=> {setLanguage(lang)}}>
+                    {lang}
+                </button>
             <h1>{t("TaskPages.header")}</h1>
             <Wrapper>
-                <TaskForm onSave={()=>{}}/>
+                <TaskForm onSave={defaultFunction}/>
             </Wrapper>
             <Wrapper>
                 <TaskList />

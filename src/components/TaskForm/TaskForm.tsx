@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import taskStore from "../../stores/taskStore/taskStore";
-import { Task } from "../../types";
+import type { TaskFormProps } from "./types.t";
 
 import './TaskForm.css'
-
-interface TaskFormProps {
-    task?: Task
-    onSave: () => void | undefined
-}
+// Компонент используется для добавления или редактирования задачи
+// В зависимости он наличия в props task
 
 export const TaskForm = (props: TaskFormProps) => {
     const { task, onSave } = props;

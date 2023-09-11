@@ -13,6 +13,9 @@ export const TaskItem = (props: Task) => {
     function handleChange() {
         toggleComplete(id);
     }
+
+    // по клику на одно из полей запускается окно редактора
+
     return (
         <>
             {

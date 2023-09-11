@@ -1,5 +1,22 @@
 # React + TypeScript + Vite
 
+Для запуска необходима Node js v18 и выше
+
+Предварительно клонируйте репозиторий к себе на машину
+и выполните команду:
+- npm install
+
+Сборка проекта
+- npm run build
+
+Запуск в режиме разработки
+- npm run вум
+
+DEMO версия доступна по ссылке -> https://agbis-test-one.vercel.app/
+
+
+Техническая информация для разработчика:
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
