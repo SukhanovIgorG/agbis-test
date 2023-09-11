@@ -3,6 +3,7 @@ import taskStore from "../../stores/taskStore/taskStore";
 import { Task } from "../../types";
 
 import './TaskForm.css'
+import { useTranslation } from "react-i18next";
 
 interface TaskFormProps {
     task?: Task
@@ -14,6 +15,8 @@ export const TaskForm = (props: TaskFormProps) => {
     const { addTask, editTask, deleteTask } = taskStore;
     const [title, setTitle] = useState<string>(task ? task.title : "");
     const [description, setDescription] = useState<string>(task ? task.description : "");
+
+    const { t } = useTranslation();
 
     const contWordsPerLine = 40
 
@@ -36,13 +39,13 @@ export const TaskForm = (props: TaskFormProps) => {
 
     return (
             <form onSubmit={submitHandler}>
-                {!task && <h2>Новая задача</h2>}
+                {!task && <h2>{t("TaskForm.header")}</h2>}
                 <fieldset className="container">
                     <input
                         value={title}
                         onChange={e => setTitle(e.target.value)}
                         type='text'
-                        placeholder='Заголовок'
+                        placeholder={t("TaskForm.placeholderTitle")}
                         required
                         minLength={1}
                         maxLength={20}
@@ -51,7 +54,7 @@ export const TaskForm = (props: TaskFormProps) => {
                     <textarea
                         value={description}
                         onChange={e => setDescription(e.target.value)}
-                        placeholder='Добавьте описание ... (необязательно)'
+                        placeholder={t("TaskForm.placeholderDescription")}
                         rows={description.length / contWordsPerLine} 
                         maxLength={250}
                         className="textarea"
@@ -63,22 +66,22 @@ export const TaskForm = (props: TaskFormProps) => {
                     <button
                         type='submit'
                         className="button_in_group"
-                    >Изменить</button>
+                    >{t("TaskForm.saveButtonLabel")}</button>
                     <button
                         type='button'
                         className="button_in_group"
                         onClick={() => onSave()}
-                    >Отменить</button>
+                    >{t("TaskForm.cancelButtonLabel")}</button>
                     <button
                         type='button'
                         className="delete_button"
                         onClick={deleteHandler}
-                    >Удалить</button>
+                    >{t("TaskForm.deleteButtonLabel")}</button>
                     </div>
                 : <button
                     type='submit'
                     className="button"
-                >Добавить</button>
+                >{t("TaskForm.addButtonLabel")}</button>
     }
                 </div>
             </form>

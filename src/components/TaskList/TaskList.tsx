@@ -5,6 +5,7 @@ import taskStore from "../../stores/taskStore/taskStore"
 import { TaskItem } from "../";
 
 import "./TaskList.css"
+import { useTranslation } from "react-i18next";
 
 export const TaskList = observer(() => {
     const { tasks } = taskStore
@@ -12,18 +13,18 @@ export const TaskList = observer(() => {
     const tasksCopy = [...tasks]
     const taskToShow =  filter ? [...tasksCopy.filter((el) => !el.completed)] : tasks
 
-    console.log('tasks :>> ', tasks);
+    const { t } = useTranslation();
 
     return (
         <>
             <button className="button"
             onClick={()=> setFilter(prev => !prev)}>
-                Показать { !filter ? 'только невыполненные'  : 'все'}
+                {t("TaskList.filterButton")} { !filter ? t("TaskList.showNotCompleted")  : t("TaskList.showAll")}
             </button>
             {taskToShow.length ?
                 taskToShow.map((task) => (<TaskItem {...task} key={task.id + Math.random()} />))
             :
-            <p>Вы молодец! В списке нет задач 💪</p>}
+            <p>{t("TaskList.noTasks")}</p>}
         </>
     )
 });
