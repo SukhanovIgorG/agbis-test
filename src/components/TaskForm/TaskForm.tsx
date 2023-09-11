@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import taskStore from "../../stores/taskStore/taskStore";
 import { Task } from "../../types";
 
 import './TaskForm.css'
-import { useTranslation } from "react-i18next";
 
 interface TaskFormProps {
     task?: Task

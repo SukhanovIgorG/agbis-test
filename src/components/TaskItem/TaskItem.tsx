@@ -1,8 +1,6 @@
-import taskStore from '../../stores/taskStore/taskStore';
-
-import { TaskForm } from '../';
 import { useState } from 'react';
-
+import { TaskForm } from '../';
+import taskStore from '../../stores/taskStore/taskStore';
 import type { Task } from '../../types';
 
 import './TaskItem.css'

@@ -1,11 +1,10 @@
-import { observer } from "mobx-react-lite"
-
 import { useState } from "react";
+import { observer } from "mobx-react-lite"
+import { useTranslation } from "react-i18next";
 import taskStore from "../../stores/taskStore/taskStore"
 import { TaskItem } from "../";
 
 import "./TaskList.css"
-import { useTranslation } from "react-i18next";
 
 export const TaskList = observer(() => {
     const { tasks } = taskStore

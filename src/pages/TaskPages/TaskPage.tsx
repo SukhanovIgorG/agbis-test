@@ -3,7 +3,6 @@ import { TaskList, TaskForm, Wrapper } from "../../components";
 import { useTranslation } from "react-i18next";
 import i18n from "../../utils/i18next";
 
-import '../../utils/i18next'
 import './TaskPage.css'
 
 export const TaskPage = () => {
