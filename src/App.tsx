@@ -4,6 +4,8 @@ import './App.css'
 
 function App() {
 
+  // В приложение заложена возможность роутинга и масштабируемость
+
   return (
     <>
       <HashRouter>
